@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <form action = "http://localhost:5000/submit" method = "post">
+            {% for question in questions %}
+                <div>
+                    {{question.question|safe}}
+                    <div>
+                        {% for ans in question.getShuffledAnswers() %}
+                            {{ans}}
+                            <input type="radio" value="{{ans}}" name="{{question.id}}">
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            <button>Submit</button>
+        </form>   
+    </body>
+</html>

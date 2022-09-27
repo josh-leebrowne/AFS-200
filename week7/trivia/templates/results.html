@@ -1,0 +1,22 @@
+<html>
+    <body>
+            <h1>Correctly Answered:</h1>
+        {% for question in questions[0] %}
+            <div>
+                {{question.question|safe}}
+                <div>
+                    {{question.correctAns}}
+                </div>
+            </div>
+        {% endfor %}
+            <h1>Incorrectly Answered:</h1>
+        {% for question in questions[1] %}
+            <div>
+                {{question.question|safe}}
+                <div>
+                    {{question.correctAns}}
+                </div>
+            </div>
+        {% endfor %} 
+    </body>
+</html>
